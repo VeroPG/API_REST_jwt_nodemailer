@@ -26,9 +26,30 @@ npm start
 
 ## Tutorial
 
-The first step is to change the configuration of your Google account to allow less secure app access to send mails by nodemailer.
+This demo uses [Mailtrap](https://mailtrap.io) to test email sending.
 
-![img](/assets/lesssecureapps.png)
+1. Sign up and log in in Mailtrap<br>
+2. Go to Email Testing > start testing<br>
+3. Add Inbox -> Name the Inbox and save.<br>
+4. Go to settings ⚙️ > Integrations > node.js - nodemailer.<br> 
+You will get a code snippet like this. 
+
+```js 
+var transport = nodemailer.createTransport({
+  host: "sandbox.smtp.mailtrap.io",
+  port: 2525,
+  auth: {
+    user: "*********95625",
+    pass: "********eea0"
+  }
+});
+```
+
+In your project go to `config/nodemailer.js`
+
+- Import nodemailer 
+- Copy the previous snippet
+- Export the module
 
 Set your .env whit these variables:
 - URL_MONGO= your mongo connection

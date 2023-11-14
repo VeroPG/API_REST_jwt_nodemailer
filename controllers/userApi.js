@@ -87,7 +87,7 @@ const resetPassword = async(req, res) => {
         }else{
             res.status(400).json({msg: 'Password must have at least 8 characters, one uppercase, one lowercase and one special character'});
         }
-        res.status(200).json({message: 'Password actualized'});
+        res.status(200).json({message: 'Password updated'});
     } catch (error) {
         console.log('Error:', error);
     }
