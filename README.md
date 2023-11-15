@@ -54,8 +54,6 @@ In your project go to `config/nodemailer.js`
 Set your .env whit these variables:
 - URL_MONGO= your mongo connection
 - ULTRA_SECRET_KEY = jwt's key
-- SECRET_EMAIL_DIRECTION = mail direction to send mails by nodemailer
-- ULTRA_SECRET_EMAIL_PASS = password of your mail direction
 - URL_RECOVER = url to recover password, in this case use http://localhost:3000
 
 Then go to your Rest Client (I use Advanced Rest Client) and make your signup request.
