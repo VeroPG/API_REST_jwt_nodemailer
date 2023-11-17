@@ -26,16 +26,35 @@ npm start
 
 ## Tutorial
 
-The first step is to change the configuration of your Google account to allow less secure app access to send mails by nodemailer.
+This demo uses [Mailtrap](https://mailtrap.io) to test email sending.
 
-![img](/assets/lesssecureapps.png)
+1. Sign up and log in in Mailtrap<br>
+2. Go to Email Testing > start testing<br>
+3. Add Inbox -> Name the Inbox and save.<br>
+4. Go to settings ⚙️ > Integrations > node.js - nodemailer.<br> 
+You will get a code snippet like this. 
 
-Set your .env whit these variables:
+```js 
+var transport = nodemailer.createTransport({
+  host: "sandbox.smtp.mailtrap.io",
+  port: 2525,
+  auth: {
+    user: "*********95625",
+    pass: "********eea0"
+  }
+});
+```
+
+In your project go to `config/nodemailer.js`
+
+- Import nodemailer 
+- Copy the previous snippet
+- Export the module
+
+Set your .env with these variables:
 - URL_MONGO= your mongo connection
-- ULTRA_SECRET_KEY = jwt's key
-- SECRET_EMAIL_DIRECTION = mail direction to send mails by nodemailer
-- ULTRA_SECRET_EMAIL_PASS = password of your mail direction
-- URL_RECOVER = url to recover password, in this case use http://localhost:3000
+- ULTRA_SECRET_KEY= jwt's key
+- URL_RECOVER= url to recover password, in this case use http://localhost:3000
 
 Then go to your Rest Client (I use Advanced Rest Client) and make your signup request.
 
