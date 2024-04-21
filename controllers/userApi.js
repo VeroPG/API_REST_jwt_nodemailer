@@ -1,4 +1,4 @@
-const jwt = require('jsonwebtoken');
+const jwt = require('jsonwebtoken');// firma token que contiene email de usuario
 const bcrypt = require('bcrypt');
 const User = require('../models/user');
 const transporter = require('../config/nodemailer');
